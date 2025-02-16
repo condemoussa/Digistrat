@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+
+       <record model="ir.ui.view" id="view_form_hypothese_indicateur_effet">
+            <field name="name">HYPOTHESES D'INDICATEURS D'EFFETS</field>
+            <field name="model">hipothese.indicateur.effet</field>
+            <field name="arch" type="xml">
+                <form string="HYPOTHESES D'INDICATEURS D'EFFETS">
+                      <sheet>
+                          <div class="title">
+                              <span class="badge text-bg-info shadow p-3 mb-3 rounded">HYPOTHESE D'INDICATEUR D'EFFET</span>
+                          </div>
+
+                           <group>
+                                   <group>
+                                        <field name="valeur"/>
+
+                                   </group>
+                                   <group>
+                                       <field name="ind_efft_id"/>
+
+                                   </group>
+
+                           </group>
+                      </sheet>
+                </form>
+            </field>
+        </record>
+              <!-- la view tree -->
+       <record model="ir.ui.view" id="view_tree_hypothese_indicateur_effe">
+                  <field name="name">HYPOTHESES D'INDICATEURS D'EFFETS</field>
+                  <field name="model">hipothese.indicateur.effet</field>
+                  <field name="arch" type="xml">
+                    <tree string="HYPOTHESES D'INDICATEURS D'EFFETS"
+                    >
+                          <field name="valeur" string="Valeur"/>
+                          <field name="ind_efft_id" string="Indicateur d'effet"/>
+                         <field name="create_date" string="Date de création" groups="Digistrat.group_admin_digistrat"/>
+                         <field name="write_date" string="Date de dernière modification " groups="Digistrat.group_admin_digistrat"/>
+                         <field name="create_uid" string="Créé par" groups="Digistrat.group_admin_digistrat"/>
+                         <field name="write_uid"  string="Modifié par" groups="Digistrat.group_admin_digistrat"/>
+
+
+        </tree>
+      </field>
+    </record>
+
+             <!-- la view action -->
+       <record model="ir.actions.act_window" id="view_action_hopothse_indicateur_effet">
+                  <field name="name">HYPOTHESE INDICATEUR EFFET</field>
+                  <field name="res_model">hipothese.indicateur.effet</field>
+                  <field name="view_mode">tree,form</field>
+            </record>
+      <record model="ir.actions.act_window" id="view_action_hopothse_indicateur_effet_v3">
+                  <field name="name">HYPOTHESE INDICATEUR EFFET</field>
+                  <field name="res_model">hipothese.indicateur.effet</field>
+                  <field name="view_mode">tree</field>
+            </record>
+  </data>
+</odoo>

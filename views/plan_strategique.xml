@@ -1,0 +1,80 @@
+<odoo>
+  <data>
+          <!-- la view form -->
+      <record model="ir.ui.view" id="view_form_plan_strategique">
+            <field name="name">PLAN STRATEGIQUE</field>
+            <field name="model">plan.strategique</field>
+            <field name="arch" type="xml">
+                <form string="PLAN STRATEGIQUE">
+                       <header>
+                                 <button name="demarrer" states="brouillon" string="Demarrer" type="object" />
+                                  <button name="cloture" states="encour" string="Cloturer" type="object" />
+                                 <button name="remettre_initialisation" states="encour,cancel" string="Reinitialiser" type="object"/>
+                                 <button name="annuler" states="encour,cloture" string="Annuler" type="object"/>
+                                 <field name="state" widget="statusbar" readonly="True"/>
+                           </header>
+                      <sheet>
+                          <div class="title">
+                              <span class="badge text-bg-info shadow p-3 mb-3 rounded">PLAN STRATEGIQUE</span>
+                          </div>
+                           <group>
+                               <h6>Nom du Plan stratégique:</h6>
+                                 <field name="libelle"/>
+                                   <group>
+                                        <field name="dat_debut" string="Date de début"/>
+                                   </group>
+                                   <group>
+
+                                        <field name="dat_fin" />
+                                   </group>
+                           </group>
+                            <notebook>
+                                 <page string="Documents">
+                                    <field name="pdf_files" colspan="4" nolabel="1">
+                                        <tree string="PDF" editable="bottom" >
+                                            <field name="name" string="Nom du document"/>
+                                            <field name="pdf_file"/>
+                                        </tree>
+                                    </field>
+                                </page>
+
+                           </notebook>
+                      </sheet>
+                </form>
+            </field>
+        </record>
+       <!-- la view tree -->
+       <record model="ir.ui.view" id="view_tree_plan_strategique">
+                  <field name="name">PLAN STRATEGIQUE</field>
+                  <field name="model">plan.strategique</field>
+                  <field name="arch" type="xml">
+                    <tree string="PLAN STRATEGIQUE"
+                    >
+                         <field name="libelle" string="Libellé" />
+                         <field name="dat_debut" string="Date de début"/>
+                         <field name="dat_fin" string="Date de fin" />
+                         <field name="state" string="Etat"/>
+                         <field name="create_date" string="Date de création" groups="Digistrat.group_admin_digistrat"/>
+                         <field name="write_date" string="Date de dernière modification " groups="Digistrat.group_admin_digistrat"/>
+                         <field name="create_uid" string="Créé par" groups="Digistrat.group_admin_digistrat"/>
+                         <field name="write_uid"  string="Modifié par" groups="Digistrat.group_admin_digistrat"/>
+
+
+        </tree>
+      </field>
+    </record>
+
+      <!-- la view action -->
+        <record model="ir.actions.act_window" id="view_action_plan_strategique">
+          <field name="name">PLAN STRATEGIQUE</field>
+          <field name="res_model">plan.strategique</field>
+          <field name="view_mode">tree,form</field>
+        </record>
+         <record model="ir.actions.act_window" id="view_action_plan_strategique_v3">
+          <field name="name">PLAN STRATEGIQUE</field>
+          <field name="res_model">plan.strategique</field>
+          <field name="view_mode">tree</field>
+        </record>
+
+  </data>
+</odoo>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+     <data>
+        <record id="view_users_form_custom" model="ir.ui.view">
+            <field name="name">res.users</field>
+            <field name="model">res.users</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="base.view_users_form"/>
+            <field name="arch" type="xml">
+               <xpath expr="//field[@name='name']" position="after">
+                   <h6>Matricule</h6>
+                   <div><field name="matricule"  /></div>
+                </xpath>
+                 <xpath expr="//field[@name='name']" position="after">
+                     <h6>Prénom</h6>
+                   <div><field name="prenom" /></div>
+                </xpath>
+                <xpath expr="//field[@name='login']" position="after">
+                    <h6>Date de Naissance</h6>
+                   <div><field name="dat_naissance" /></div>
+                </xpath>
+                 <xpath expr="//field[@name='login']" position="after">
+                     <h6>Sexe</h6>
+                   <div><field name="sex"/></div>
+                </xpath>
+                 <xpath expr="//field[@name='login']" position="after">
+                     <h6>Grade</h6>
+                   <div><field name="grade" /></div>
+                </xpath>
+                  <xpath expr="//field[@name='login']" position="after">
+                      <h6>Profil</h6>
+                   <div><field name="profil" /></div>
+                </xpath>
+                <xpath expr="//field[@name='login']" position="after">
+                      <h6>Direction</h6>
+                   <div><field name="direction_id" /></div>
+                </xpath>
+
+            </field>
+        </record>
+          <record id="view_users_form_custom_tree" model="ir.ui.view">
+            <field name="name">res.users</field>
+            <field name="model">res.users</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="base.view_users_tree"/>
+            <field name="arch" type="xml">
+               <xpath expr="//field[@name='name']" position="after">
+                   <field name="matricule" />
+                </xpath>
+                 <xpath expr="//field[@name='name']" position="after">
+                   <field name="prenom"/>
+                </xpath>
+                 <xpath expr="//field[@name='login']" position="after">
+                   <field name="dat_naissance"/>
+                </xpath>
+                <xpath expr="//field[@name='login']" position="after">
+                   <field name="sex"/>
+             </xpath>
+                 <xpath expr="//field[@name='login']" position="after">
+                   <field name="grade"/>
+                 </xpath>
+                 <xpath expr="//field[@name='login']" position="after">
+                   <field name="profil"/>
+                 </xpath>
+                <xpath expr="//field[@name='login']" position="after">
+                   <field name="direction_id"/>
+                 </xpath>
+
+
+
+            </field>
+        </record>
+
+
+
+
+
+
+    </data>
+</odoo>

@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+
+    <!--  ***********************************************************************************  partenaire-->
+            <record model="ir.ui.view" id="view_form_partenaire">
+            <field name="name">PARTENAIRE</field>
+            <field name="model">atm.partenaire</field>
+            <field name="arch" type="xml">
+                <form string="PARTENAIRE">
+                      <sheet>
+                          <div class="title">
+                             <span class="badge text-bg-info shadow p-3 mb-3 rounded">PARTENAIRE</span>
+                          </div>
+                           <group>
+                               <group>
+                                    <field name="code" string="Sigle"/>
+
+<!--                                   <field name="indicateur_effet_ids" widget="many2many_tags"/>-->
+                               </group>
+                               <group>
+                                     <field name="nom"/>
+<!--                                     <field name="atm_action_ids" widget="many2many_tags"/>-->
+<!--                                     <field name="indicateur_produit_ids" widget="many2many_tags"/>-->
+                               </group>
+
+                           </group>
+                      </sheet>
+                </form>
+            </field>
+        </record>
+              <!-- la view tree -->
+             <record model="ir.ui.view" id="view_tree_partenaire">
+                  <field name="name">PARTENAIRE</field>
+                  <field name="model">atm.partenaire</field>
+                  <field name="arch" type="xml">
+                    <tree string="PARTENAIRE"
+                    >
+                          <field name="code" string="Sigle"/>
+                          <field name="nom" string="Partenaire"/>
+                         <field name="create_date" string="Date de crétaion" groups="Digistrat.group_admin_digistrat"/>
+                         <field name="write_date" string="Date de dernière modification " groups="Digistrat.group_admin_digistrat"/>
+                         <field name="create_uid" string="Créé par" groups="Digistrat.group_admin_digistrat"/>
+                         <field name="write_uid"  string="Modifié par" groups="Digistrat.group_admin_digistrat"/>
+
+<!--                           <field name="indicateur_effet_ids"/>-->
+<!--                            <field name="atm_action_ids"/>-->
+<!--                           <field name="indicateur_produit_ids"/>-->
+
+        </tree>
+      </field>
+    </record>
+
+             <!-- la view action -->
+            <record model="ir.actions.act_window" id="view_action_partenaire">
+                  <field name="name">PARTENAIRE</field>
+                  <field name="res_model">atm.partenaire</field>
+                  <field name="view_mode">tree,form</field>
+            </record>
+  </data>
+</odoo>

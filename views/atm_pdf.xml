@@ -1,0 +1,57 @@
+<odoo>
+  <data>
+          <!-- la view form -->
+      <record model="ir.ui.view" id="view_form_atm_pdf">
+            <field name="name">FICHIERS PDF</field>
+            <field name="model">atm.pdf</field>
+            <field name="arch" type="xml">
+                <form string="FICHIERS PDF">
+
+                      <sheet>
+                          <div class="title">
+                              <span class="badge text-bg-info shadow p-3 mb-3 rounded">FICHIER PDF</span>
+                          </div>
+                           <group>
+                               <h6>Nom du Fichier :</h6>
+                                 <field name="name"/>
+                                   <group>
+                                        <field name="pdf_file"/>
+                                   </group>
+                                   <group>
+                                        <field name="plan_strategique_id" string="Plan stratégique"/>
+                                   </group>
+                           </group>
+                      </sheet>
+                </form>
+            </field>
+        </record>
+       <!-- la view tree -->
+       <record model="ir.ui.view" id="view_tree_atm_pdf">
+                  <field name="name">FICHIERS PDF</field>
+                  <field name="model">atm.pdf</field>
+                  <field name="arch" type="xml">
+                    <tree string="FICHIERS PDF"
+                    >
+                         <field name="name" string="Nom du fichier" />
+                         <field name="pdf_file" string="Chemin d'accès"/>
+                         <field name="plan_strategique_id" string="Plan stratégique" />
+                       <field name="create_date" string="Date de création" groups="Digistrat.group_admin_digistrat"/>
+                         <field name="write_date" string="Date de dernière modification " groups="Digistrat.group_admin_digistrat"/>
+                         <field name="create_uid" string="Créé par" groups="Digistrat.group_admin_digistrat"/>
+                         <field name="write_uid"  string="Modifié par" groups="Digistrat.group_admin_digistrat"/>
+
+
+
+        </tree>
+      </field>
+    </record>
+
+    <!-- la view action -->
+        <record model="ir.actions.act_window" id="view_action_atm_pdf">
+          <field name="name">FICHIER PDF</field>
+          <field name="res_model">atm.pdf</field>
+          <field name="view_mode">tree,form</field>
+        </record>
+
+  </data>
+</odoo>

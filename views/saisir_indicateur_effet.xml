@@ -1,0 +1,69 @@
+<odoo>
+  <data>
+          <record model="ir.ui.view" id="view_form_saisir_indicateur_effet">
+            <field name="name">DONNÉES D'INDICATEUR D'EFFETS</field>
+            <field name="model">saisir.indicateur.effet</field>
+            <field name="arch" type="xml">
+                <form string="DONNÉES D'INDICATEUR D'EFFETS">
+                      <sheet>
+                          <div class="title">
+                             <span class="badge text-bg-info shadow p-3 mb-3 rounded">DONNÉES D'INDICATEUR D'EFFET</span>
+                          </div>
+
+                           <group>
+                                   <group>
+                                        <field name="ind_efft_id" string="Libellé de l'indicateur" />
+                                        <field name="cible" groups="Digistrat.group_admin_digistrat,Digistrat.group_agent_deesp"/>
+                                         <field name="direction_id"/>
+                                   </group>
+                                   <group>
+                                       <field name="annee"/>
+                                       <field name="realise" string="Réalisé"/>
+                                       <field name="status"/>
+
+                                   </group>
+                               <h6>Commentaire</h6>
+                               <field name="comment"/>
+                           </group>
+                      </sheet>
+                </form>
+            </field>
+        </record>
+              <!-- la view tree -->
+             <record model="ir.ui.view" id="view_tree_saisir_indicateur_effet">
+                  <field name="name">DONNÉES D'INDICATEUR D'EFFETS</field>
+                  <field name="model">saisir.indicateur.effet</field>
+                  <field name="arch" type="xml">
+                    <tree string="DONNÉES D'INDICATEUR D'EFFETS"
+                    >
+                          <field name="ind_efft_id" string="Libellé"/>
+                          <field name="annee" string="Année"/>
+                          <field name="cible" string="Cible"/>
+                          <field name="realise" string="Réalisé"/>
+                          <field name="direction_id" string="Responsable"/>
+                         <field name="status"/>
+                        <field name="comment" string="Commentaire"/>
+                        <field name="create_date" string="Date de création" groups="Digistrat.group_admin_digistrat"/>
+                         <field name="write_date" string="Date de dernière modification " groups="Digistrat.group_admin_digistrat"/>
+                         <field name="create_uid" string="Créé par" groups="Digistrat.group_admin_digistrat"/>
+                         <field name="write_uid"  string="Modifié par" groups="Digistrat.group_admin_digistrat"/>
+
+
+        </tree>
+      </field>
+    </record>
+
+             <!-- la view action -->
+            <record model="ir.actions.act_window" id="view_action_saisie_indicateur_effet">
+                  <field name="name">DONNÉES D'INDICATEUR D'EFFETS</field>
+                  <field name="res_model">saisir.indicateur.effet</field>
+                  <field name="view_mode">tree,form</field>
+            </record>
+      <record model="ir.actions.act_window" id="view_action_saisie_indicateur_effet_v3">
+                  <field name="name">DONNÉES D'INDICATEUR D'EFFETS</field>
+                  <field name="res_model">saisir.indicateur.effet</field>
+                  <field name="view_mode">tree</field>
+            </record>
+
+  </data>
+</odoo>

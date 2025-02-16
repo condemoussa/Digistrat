@@ -1,0 +1,66 @@
+<odoo>
+  <data>
+
+      <!--  *********************************************************************************** indicateur resultat strategique-->
+        <record model="ir.ui.view" id="view_form_indicateur_resultat_strategique">
+            <field name="name">INDICATEUR DE RESULTAT STRATEGIQUE</field>
+            <field name="model">indicateur.resultat.strategique</field>
+            <field name="arch" type="xml">
+                <form string="INDICATEUR DE RESULTAT STRATEGIQUE">
+                      <sheet>
+                          <div class="title">
+                              <span class="badge text-bg-info shadow p-3 mb-3 rounded">INDICATEUR DE RESULTAT STRATEGIQUE</span>
+                          </div>
+                           <group>
+
+                                   <group>
+                                         <field name="libelle" string="Libellé de l'indicateur :"/>
+                                         <field name="direction_id" string="Direction :"/>
+                                   </group>
+                                   <group>
+                                         <field name="anne_base"/>
+                                       <field name="valeur_base" string="Valeur de base"/>
+                                   </group>
+                                <h6>Résultat stratégique :</h6>
+                                 <field name="impact_id"/>
+                           </group>
+                      </sheet>
+                </form>
+            </field>
+        </record>
+       <!-- la view tree -->
+       <record model="ir.ui.view" id="view_tree_indicateur_resultat_strategique_test">
+                  <field name="name">INDICATEUR DE RESULTAT STRATEGIQUE</field>
+                  <field name="model">indicateur.resultat.strategique</field>
+                  <field name="arch" type="xml">
+                    <tree string="INDICATEUR DE RESULTAT STRATEGIQUE"
+                    >
+                         <field name="libelle" string="Libellé"/>
+                        <field name="anne_base" string="Année de base"/>
+                        <field name="valeur_base" string="Valeur de base"/>
+                        <field name="impact_id" string="Résultat stratégique"/>
+                        <field name="direction_id" string="Direction "/>
+                        <field name="create_date" string="Date de création" groups="Digistrat.group_admin_digistrat"/>
+                         <field name="write_date" string="Date de dernière modification " groups="Digistrat.group_admin_digistrat"/>
+                         <field name="create_uid" string="Créé par" groups="Digistrat.group_admin_digistrat"/>
+                         <field name="write_uid"  string="Modifié par" groups="Digistrat.group_admin_digistrat"/>
+
+
+
+        </tree>
+      </field>
+    </record>
+
+    <!-- la view action -->
+        <record model="ir.actions.act_window" id="view_action_indicateur_resultat_strategique">
+          <field name="name">INDICATEUR DE RESULTAT STRATEGIQUE</field>
+          <field name="res_model">indicateur.resultat.strategique</field>
+          <field name="view_mode">tree,form</field>
+        </record>
+       <record model="ir.actions.act_window" id="view_action_indicateur_resultat_strategique_v3">
+          <field name="name">INDICATEUR DE RESULTAT STRATEGIQUE</field>
+          <field name="res_model">indicateur.resultat.strategique</field>
+          <field name="view_mode">tree</field>
+        </record>
+  </data>
+</odoo>

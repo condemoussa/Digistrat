@@ -1,0 +1,85 @@
+<odoo>
+  <data>
+       <!--  *********************************************************************************** produit-->
+
+       <record model="ir.ui.view" id="view_form_produit">
+            <field name="name">PRODUITS</field>
+            <field name="model">atm.produit</field>
+            <field name="arch" type="xml">
+                <form string="PRODUITS">
+                      <sheet>
+                          <div class="title">
+                             <span class="badge text-bg-info shadow p-3 mb-3 rounded">PRODUIT</span>
+                          </div>
+
+                           <group>
+                                   <group>
+                                        <field name="libelle" string="Nom du produit"/>
+                                   </group>
+                                   <group>
+                                       <field name="effet_id"/>
+                                   </group>
+                           </group>
+                      </sheet>
+                </form>
+            </field>
+        </record>
+              <!-- la view tree -->
+      <record model="ir.ui.view" id="view_tree_produit">
+                  <field name="name">HYPOTHESE INDICATEUR EFFET</field>
+                  <field name="model">atm.produit</field>
+                  <field name="arch" type="xml">
+                    <tree string="PRODUITS">
+                          <field name="libelle" string="Libellé"/>
+                          <field name="effet_id" string="Effet"/>
+                         <field name="create_date" string="Date de création" groups="Digistrat.group_admin_digistrat"/>
+                         <field name="write_date" string="Date de dernière modification " groups="Digistrat.group_admin_digistrat"/>
+                         <field name="create_uid" string="Créé par" groups="Digistrat.group_admin_digistrat"/>
+                         <field name="write_uid"  string="Modifié par" groups="Digistrat.group_admin_digistrat"/>
+                    </tree>
+                  </field>
+      </record>
+
+       <!-- la view pivot -->
+       <record id="view_produit_pivot" model="ir.ui.view">
+         <field name="name">PRODUITS</field>
+         <field name="model">atm.produit</field>
+         <field name="arch" type="xml">
+             <pivot string="PRODUITS" sample="1">
+                 <field name="effet_id" type="col"/>
+                 <field name="libelle" interval="month" type="row"/>
+                 <field name="total_produit" type="measure"/>
+             </pivot>
+         </field>
+    </record>
+      <!-- la view graph -->
+<!--       <record id="view_produit_graph" model="ir.ui.view">-->
+<!--         <field name="name">PRODUIT</field>-->
+<!--         <field name="model">atm.produit</field>-->
+<!--         <field name="arch" type="xml">-->
+<!--             <graph string="Les produits" type="line" sample="1">-->
+<!--                 <field name="effet_id" type="measure"/>-->
+<!--                 <field name="total_produit" type="measure"/>-->
+<!--             </graph>-->
+<!--         </field>-->
+<!--    </record>-->
+
+             <!-- la view action -->
+      <record model="ir.actions.act_window" id="view_action_produit">
+                  <field name="name">PRODUITS</field>
+                  <field name="res_model">atm.produit</field>
+                  <field name="view_mode">tree,form</field>
+            </record>
+       <record model="ir.actions.act_window" id="view_action_produit_v3">
+                  <field name="name">PRODUITS</field>
+                  <field name="res_model">atm.produit</field>
+                  <field name="view_mode">tree</field>
+            </record>
+      <record model="ir.actions.act_window" id="view_action_produit_v2">
+                  <field name="name">PRODUITS</field>
+                  <field name="res_model">atm.produit</field>
+                  <field name="view_mode">pivot,graph</field>
+            </record>
+
+  </data>
+</odoo>

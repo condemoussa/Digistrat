@@ -1,0 +1,135 @@
+<odoo>
+  <data>
+       <!--  ***********************************************************************************  saisir-->
+            <record model="ir.ui.view" id="view_form_saisir_indicateur_resultat_strategique">
+            <field name="name">SAISIR INDICATEUR RESULTAT STRATEGIQUE</field>
+            <field name="model">saisir.indicateur.resultat.strategique</field>
+            <field name="arch" type="xml">
+                <form string="SAISIR INDICATEUR RESULTAT STRATEGIQUE">
+                      <sheet>
+                          <div style="border-radius:20px 20px black;color:orange; margin-bottom:20px; padding:10px;text-align:center;font-size:30px;">
+                             SAISIR INDICATEUR RESULTAT STRATEGIQUE
+                          </div>
+
+                           <group>
+                                   <group>
+                                        <field name="annee"/>
+                                        <field name="cible"/>
+                                   </group>
+                                   <group>
+                                       <field name="realise"/>
+                                       <field name="ind_result_id"/>
+                                   </group>
+                               <field name="comment" placeholder="Commentaire"/>
+                           </group>
+                      </sheet>
+                </form>
+            </field>
+        </record>
+              <!-- la view tree -->
+             <record model="ir.ui.view" id="view_tree_indicateur_resultat_strategique">
+                  <field name="name">SAISIR INDICATEUR RESULTAT STRATEGIQUE</field>
+                  <field name="model">saisir.indicateur.resultat.strategique</field>
+                  <field name="arch" type="xml">
+                    <tree string="SAISIR INDICATEUR RESULTAT STRATEGIQUE"
+                    >
+                          <field name="annee"/>
+                          <field name="cible"/>
+                            <field name="realise"/>
+                          <field name="ind_result_id"/>
+                         <field name="comment"/>
+                         <field name="create_date" string="Créer à la date de" groups="Digistrat.group_admin_digistrat"/>
+                         <field name="write_date" string="Date de dernière modification " groups="Digistrat.group_admin_digistrat"/>
+                         <field name="create_uid" string="Créé par" groups="Digistrat.group_admin_digistrat"/>
+                         <field name="write_uid"  string="Modifié par" groups="Digistrat.group_admin_digistrat"/>
+
+
+        </tree>
+      </field>
+    </record>
+
+             <!-- la view action -->
+            <record model="ir.actions.act_window" id="view_action_saisie_indicateur_resultat_strategique">
+                  <field name="name">SAISIR INDICATEUR RESULTAT STRATEGIQUE</field>
+                  <field name="res_model">saisir.indicateur.resultat.strategique</field>
+                  <field name="view_mode">tree,form</field>
+            </record>
+      <!--  ***********************************************************************************  saisir-->
+
+       <!--  ***********************************************************************************  risque-->
+
+
+       <!--  ***********************************************************************************  Hypothes-->
+
+
+
+
+
+<!--       &lt;!&ndash;  *********************************************************************************** indicateur effet&ndash;&gt;-->
+<!--            <record model="ir.ui.view" id="view_form_indicateur_produit">-->
+<!--            <field name="name">INDICATEUR PRODUIT</field>-->
+<!--            <field name="model">indicateur.produit</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <form string="INDICATEUR PRODUIT">-->
+<!--                      <sheet>-->
+<!--                          <div style="border-radius:20px 20px black;color:orange; margin-bottom:20px; padding:10px;text-align:center;font-size:30px;">-->
+<!--                            INDICATEUR PRODUIT-->
+<!--                          </div>-->
+
+<!--                           <group>-->
+<!--                                   <group>-->
+<!--                                        <field name="code"/>-->
+<!--                                        <field name="libelle"/>-->
+<!--                                        <field name="partenaire_ids" widget="many2many_tags"/>-->
+<!--                                   </group>-->
+<!--                                   <group>-->
+<!--                                        <field name="anne_base"/>-->
+<!--                                       <field name="valeur_base"/>-->
+<!--                                        <field name="produit_id"/>-->
+<!--                                   </group>-->
+<!--                           </group>-->
+<!--                      </sheet>-->
+<!--                </form>-->
+<!--            </field>-->
+<!--        </record>-->
+<!--              &lt;!&ndash; la view tree &ndash;&gt;-->
+<!--             <record model="ir.ui.view" id="view_tree_indicateur_produit">-->
+<!--                  <field name="name">INDICATEUR PRODUIT</field>-->
+<!--                  <field name="model">indicateur.produit</field>-->
+<!--                  <field name="arch" type="xml">-->
+<!--                    <tree string="INDICATEUR EFFETS"-->
+<!--                    >-->
+<!--                        <field name="code"/>-->
+<!--                        <field name="libelle"/>-->
+<!--                         <field name="anne_base"/>-->
+<!--                        <field name="valeur_base"/>-->
+<!--                        <field name="produit_id"/>-->
+
+<!--        </tree>-->
+<!--      </field>-->
+<!--    </record>-->
+
+<!--             &lt;!&ndash; la view action &ndash;&gt;-->
+<!--            <record model="ir.actions.act_window" id="view_action_indicateur_produit">-->
+<!--                  <field name="name">INDICATEUR PRODUIT</field>-->
+<!--                  <field name="res_model">indicateur.produit</field>-->
+<!--                  <field name="view_mode">tree,form</field>-->
+<!--            </record>-->
+
+
+
+            <!--  ***********************************************************************************  saisir-->
+
+             <!--  ***********************************************************************************  risque-->
+
+
+
+          <!--  ***********************************************************************************  Action-->
+
+
+
+
+
+
+       </data>
+</odoo>

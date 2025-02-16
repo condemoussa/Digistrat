@@ -1,0 +1,99 @@
+<odoo>
+  <data>
+           <!-- la view pivot -->
+       <record id="view_action_pivot" model="ir.ui.view">
+         <field name="name">ACTION</field>
+         <field name="model">atm.action</field>
+         <field name="arch" type="xml">
+             <pivot string="AXES" sample="1">
+                 <field name="produit_id" type="col"/>
+                 <field name="libelle" interval="month" type="row"/>
+                 <field name="total_action" type="measure"/>
+             </pivot>
+         </field>
+    </record>
+      <!-- la view graph -->
+       <record id="view_action_graph" model="ir.ui.view">
+         <field name="name">ACTION</field>
+         <field name="model">atm.action</field>
+         <field name="arch" type="xml">
+             <graph string="Les Actions" type="line" sample="1">
+                 <field name="total_action" type="measure"/>
+             </graph>
+         </field>
+    </record>
+
+            <record model="ir.ui.view" id="view_form_action">
+            <field name="name">ACTION</field>
+            <field name="model">atm.action</field>
+            <field name="arch" type="xml">
+                <form string="ACTION">
+                      <sheet>
+                          <div class="title">
+                              <span class="badge text-bg-info shadow p-3 mb-3 rounded">ACTION</span>
+                          </div>
+
+                           <group>
+                                   <group>
+                                        <field name="libelle" string="Libellé"/>
+                                          <field name="dat_debut" string="Période de début :"/>
+                                       <field name="direction_ids" widget="many2many_tags"/>
+                                   </group>
+                                   <group>
+                                         <field name="produit_id"/>
+                                         <field name="dat_fin" string="Période de fin :"/>
+                                         <field name="partenaire_ids" widget="many2many_tags"/>
+                                   </group>
+
+                           </group>
+                      </sheet>
+                </form>
+            </field>
+        </record>
+              <!-- la view tree -->
+             <record model="ir.ui.view" id="view_tree_action">
+                  <field name="name">ACTION</field>
+                  <field name="model">atm.action</field>
+                  <field name="arch" type="xml">
+                    <tree string="ACTIONS"
+                    >
+                          <field name="libelle" string="Libellé"/>
+                          <field name="dat_debut" string="Période de début"/>
+                         <field name="dat_fin" string="Période de fin"/>
+                          <field name="produit_id" string="Produit"/>
+                        <field name="direction_ids" string="Responsable" widget="many2many_tags"/>
+                        <field name="partenaire_ids" string="Partenaire" widget="many2many_tags"/>
+                        <field name="create_date" string="Date de création" groups="Digistrat.group_admin_digistrat"/>
+                         <field name="write_date" string="Date de dernière modification " groups="Digistrat.group_admin_digistrat"/>
+                         <field name="create_uid" string="Créé par" groups="Digistrat.group_admin_digistrat"/>
+                         <field name="write_uid"  string="Modifié par" groups="Digistrat.group_admin_digistrat"/>
+
+
+
+        </tree>
+      </field>
+    </record>
+             <!-- la view action -->
+            <record model="ir.actions.act_window" id="view_action_action">
+                  <field name="name">ACTIONS</field>
+                  <field name="res_model">atm.action</field>
+                  <field name="view_mode">tree,form</field>
+            </record>
+          <record model="ir.actions.act_window" id="view_action_action_v2">
+                  <field name="name">ACTIONS</field>
+                  <field name="res_model">atm.action</field>
+                  <field name="view_mode">pivot,graph</field>
+            </record>
+            <record model="ir.actions.act_window" id="view_action_action_v3">
+                  <field name="name">ACTIONS</field>
+                  <field name="res_model">atm.action</field>
+                  <field name="view_mode">tree</field>
+            </record>
+            <record model="ir.actions.act_window" id="view_action_action_v4">
+                  <field name="name">ACTIONS</field>
+                  <field name="res_model">atm.action</field>
+                  <field name="view_mode">tree</field>
+            </record>
+
+  </data>
+</odoo>

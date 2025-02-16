@@ -1,0 +1,54 @@
+<odoo>
+  <data>
+
+       <!-- la view tree -->
+       <record model="ir.ui.view" id="view_tree_tableau_bord">
+                  <field name="name">TABLEAU DE BORD</field>
+                  <field name="model">atm.tableaubord</field>
+                  <field name="arch" type="xml">
+                    <tree string="TABLEAU DE BORD"
+                    >
+                         <field name="axe"/>
+                         <field name="effet" />
+                         <field name="produit" />
+                         <field name="action" />
+                         <field name="partenaire"/>
+                         <field name="period_real" string="Période debut"/>
+                        <field name="period_real_fin" string=""/>
+
+
+
+        </tree>
+      </field>
+    </record>
+        <!-- Vue Gantt -->
+        <record id="view_projet_tableau_bord" model="ir.ui.view">
+            <field name="name">TABLEAU DE BORD</field>
+            <field name="model">atm.tableaubord</field>
+            <field name="arch" type="xml">
+                <gantt string="Diagramme des actions" date_start="period_real" date_stop="period_real_fin">
+                    <field name="action" string="Actions"/>
+                </gantt>
+            </field>
+        </record>
+
+    <!-- la view action -->
+        <record model="ir.actions.act_window" id="view_action_tableau_bord">
+          <field name="name">TABLEAU DE BORD</field>
+          <field name="res_model">atm.tableaubord</field>
+          <field name="view_mode">gantt,tree</field>
+        </record>
+
+       <record id="ir_cron_tableau_bord" model="ir.cron">
+            <field name="name">Remplissage du tableau bord</field>
+            <field name="model_id" ref="model_atm_tableaubord"/>
+            <field name="state">code</field>
+            <field name="code">model.insert_data_from_query()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="active" eval="True"/>
+        </record>
+
+  </data>
+</odoo>

@@ -1,0 +1,86 @@
+<odoo>
+  <data>
+          <!--  *********************************************************************************** Axe -->
+        <record model="ir.ui.view" id="view_form_axe">
+            <field name="name">AXES</field>
+            <field name="model">atm.axe</field>
+            <field name="arch" type="xml">
+                <form string="AXES">
+                      <sheet>
+                          <div class="title">
+                              <span class="badge text-bg-info shadow p-3 mb-3 rounded">AXES</span>
+                          </div>
+                           <group>
+                                   <group>
+                                        <field name="libelle"/>
+                                   </group>
+                                   <group>
+                                       <field name="pla_strat_id" string="Plan stratégique"/>
+                                   </group>
+                           </group>
+                      </sheet>
+                </form>
+            </field>
+        </record>
+       <!-- la view pivot -->
+     <record id="view_axe_pivot" model="ir.ui.view">
+        <field name="name">Axe</field>
+        <field name="model">atm.axe</field>
+        <field name="arch" type="xml">
+            <pivot string="AXES" sample="1">
+                <field name="pla_strat_id" type="col"/>
+                <field name="libelle" interval="month" type="row"/>
+                <field name="total_axe" type="measure" operator="sum"/>
+            </pivot>
+        </field>
+   </record>
+
+      <!-- la view graph -->
+<!--       <record id="view_axe_graph" model="ir.ui.view">-->
+<!--         <field name="name">Axe</field>-->
+<!--         <field name="model">atm.axe</field>-->
+<!--         <field name="arch" type="xml">-->
+<!--             <graph string="Les axes" type="line" sample="1">-->
+<!--                 <field name="total_axe" type="measure"/>-->
+<!--             </graph>-->
+<!--         </field>-->
+<!--       </record>-->
+       <!-- la view tree -->
+         <record model="ir.ui.view" id="view_tree_axes">
+                  <field name="name">AXES</field>
+                  <field name="model">atm.axe</field>
+                  <field name="arch" type="xml">
+                        <tree string="AXES" >
+                             <field name="libelle" string="Libellé"/>
+                             <field name="pla_strat_id" string="Plan stratégique" />
+                        <field name="create_date" string="Date de création" groups="Digistrat.group_admin_digistrat"/>
+                         <field name="write_date" string="Date de dernière modification " groups="Digistrat.group_admin_digistrat"/>
+                         <field name="create_uid" string="Créé par" groups="Digistrat.group_admin_digistrat"/>
+                         <field name="write_uid"  string="Modifié par" groups="Digistrat.group_admin_digistrat"/>
+
+                        </tree>
+                  </field>
+        </record>
+        <!-- la view action1 -->
+
+        <record model="ir.actions.act_window" id="view_action_axes">
+          <field name="name">AXES</field>
+          <field name="res_model">atm.axe</field>
+          <field name="view_mode">tree,form</field>
+        </record>
+        <!-- la view action2 -->
+
+       <record model="ir.actions.act_window" id="view_action_axes_v2">
+          <field name="name">AXES</field>
+          <field name="res_model">atm.axe</field>
+          <field name="view_mode">pivot,graph,tree</field>
+        </record>
+      <!-- acces a la lecture pour auditeur -->
+       <record model="ir.actions.act_window" id="view_action_axes_v3">
+          <field name="name">AXES</field>
+          <field name="res_model">atm.axe</field>
+          <field name="view_mode">tree</field>
+        </record>
+
+  </data>
+</odoo>

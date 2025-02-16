@@ -1,0 +1,89 @@
+<odoo>
+  <data>
+
+   <!--  *********************************************************************************** indicateur effet-->
+            <record model="ir.ui.view" id="view_form_indicateur_effet">
+            <field name="name">INDICATEUR D'EFFETS</field>
+            <field name="model">indicateur.effet</field>
+            <field name="arch" type="xml">
+                <form string="INDICATEUR D'EFFETS">
+                      <sheet>
+                          <div class="title">
+                            <span class="badge text-bg-info shadow p-3 mb-3 rounded">INDICATEUR D'EFFET</span>
+                          </div>
+
+                           <group>
+
+                                   <group>
+                                       <field name="libelle" string="Libellé de l'indicateur"/>
+                                       <field name="an_base"/>
+<!--                                       <field  name="direction_ids" widget="many2many_tags"/>-->
+                                        <field  name="direction_id" string="Direction :"/>
+                                   </group>
+                                   <group>
+                                       <field name="effet_id"/>
+                                       <field name="val_base"/>
+                                        <field name="partenaire_ids" widget="many2many_tags" invisible="1"/>
+                                   </group>
+                           </group>
+                            <notebook>
+                                 <page string="Risques">
+                                    <field name="risque_ids" colspan="4" nolabel="1">
+                                        <tree string="Salary Structure" editable="bottom" >
+                                            <field name="valeur"/>
+                                        </tree>
+                                    </field>
+                                </page>
+                                 <page string="Hypothèses">
+                                    <field name="hypothese_ids" colspan="4" nolabel="1">
+                                        <tree string="Salary Structure" editable="bottom" >
+                                            <field name="valeur"/>
+                                        </tree>
+                                    </field>
+                                </page>
+                           </notebook>
+                      </sheet>
+                </form>
+            </field>
+        </record>
+              <!-- la view tree -->
+             <record model="ir.ui.view" id="view_tree_indicateur_effet">
+                  <field name="name">INDICATEUR D'EFFETS</field>
+                  <field name="model">indicateur.effet</field>
+                  <field name="arch" type="xml">
+                    <tree string="INDICATEUR D'EFFETS"
+                    >
+                         <field name="libelle" string="Libellé"/>
+                         <field name="an_base" string="Année de base"/>
+                        <field name="val_base" string="Valeur de base"/>
+                        <field name="effet_id" string="Effet"/>
+                        <field name="partenaire_ids" string="Partenaire" widget="many2many_tags" invisible="1"/>
+                        <field name="direction_id" string="Direction " />
+                        <field name="create_date" string="Date de création" groups="Digistrat.group_admin_digistrat"/>
+                         <field name="write_date" string="Date de dernière modification " groups="Digistrat.group_admin_digistrat"/>
+                         <field name="create_uid" string="Créé par" groups="Digistrat.group_admin_digistrat"/>
+                         <field name="write_uid"  string="Modifié par" groups="Digistrat.group_admin_digistrat"/>
+
+
+        </tree>
+      </field>
+    </record>
+
+             <!-- la view action -->
+            <record model="ir.actions.act_window" id="view_action_indicateur_effet">
+                  <field name="name">INDICATEUR D'EFFETS</field>
+                  <field name="res_model">indicateur.effet</field>
+                  <field name="view_mode">tree,form</field>
+            </record>
+           <record model="ir.actions.act_window" id="view_action_indicateur_effet_v3">
+                  <field name="name">INDICATEUR D'EFFETS</field>
+                  <field name="res_model">indicateur.effet</field>
+                  <field name="view_mode">tree</field>
+            </record>
+           <record model="ir.actions.act_window" id="view_action_indicateur_effet_v4">
+                  <field name="name">INDICATEUR D'EFFETS</field>
+                  <field name="res_model">indicateur.effet</field>
+                  <field name="view_mode">tree</field>
+            </record>
+  </data>
+</odoo>

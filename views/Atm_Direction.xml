@@ -1,0 +1,65 @@
+<odoo>
+  <data>
+
+<!--  ***********************************************************************************  direction-->
+            <record model="ir.ui.view" id="view_form_direction">
+            <field name="name">DIRECTION</field>
+            <field name="model">atm.direction</field>
+            <field name="arch" type="xml">
+                <form string="PROFIL">
+                      <sheet>
+                          <div class="title">
+                             <span class="badge text-bg-info shadow p-3 mb-3 rounded">DIRECTION</span>
+                          </div>
+                           <group>
+                               <group>
+                                    <field name="code" string="Sigle"/>
+
+<!--                                    <field name="action_ids" widget="many2many_tags"/>-->
+                               </group>
+                               <group>
+                                         <field name="nom" string="Nom"/>
+<!--                                     <field name="indicateur_effet_ids" widget="many2many_tags"/>-->
+
+<!--                                    <field  name="indicateur_produit_ids" widget="many2many_tags"/>-->
+<!--                                   <field name="users_ids" widget="many2many_tags"/>-->
+                               </group>
+<!--&lt;!&ndash;                               <field name="user_id"/>&ndash;&gt;-->
+<!--                                <h6>Utilisateur(s) :</h6>-->
+<!--                                <field name="users_ids" widget="many2many_tags"/>&ndash;&gt;-->
+                           </group>
+                      </sheet>
+                </form>
+            </field>
+        </record>
+              <!-- la view tree -->
+             <record model="ir.ui.view" id="view_tree_direction">
+                  <field name="name">DIRECTION</field>
+                  <field name="model">atm.direction</field>
+                  <field name="arch" type="xml">
+                    <tree string="DIRECTION"
+                    >
+                          <field name="code" string="Sigle"/>
+                          <field name="nom" string="Direction"/>
+                         <field name="create_date" string="Date de création" groups="Digistrat.group_admin_digistrat"/>
+                         <field name="write_date" string="Date de dernière modification " groups="Digistrat.group_admin_digistrat"/>
+                         <field name="create_uid" string="Créé par" groups="Digistrat.group_admin_digistrat"/>
+                         <field name="write_uid"  string="Modifié par" groups="Digistrat.group_admin_digistrat"/>
+
+<!--                         <field name="user_id"/>-->
+<!--                         <field name="action_ids"/>-->
+<!--                         <field name="users_ids"/>-->
+<!--                         <field name="indicateur_produit_ids"/>-->
+<!--                         <field name="indicateur_effet_ids"/>-->
+        </tree>
+      </field>
+    </record>
+
+             <!-- la view action -->
+            <record model="ir.actions.act_window" id="view_action_direction">
+                  <field name="name">DIRECTION</field>
+                  <field name="res_model">atm.direction</field>
+                  <field name="view_mode">tree,form</field>
+            </record>
+  </data>
+</odoo>

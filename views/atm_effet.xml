@@ -1,0 +1,86 @@
+<odoo>
+  <data>
+       <!-- la view pivot -->
+       <record id="view_effet_pivot" model="ir.ui.view">
+         <field name="name">EFFET</field>
+         <field name="model">atm.effet</field>
+         <field name="arch" type="xml">
+             <pivot string="EFFET" sample="1">
+                 <field name="axe_id" type="col"/>
+                 <field name="libelle" interval="month" type="row"/>
+                 <field name="total_effet" type="measure"/>
+             </pivot>
+         </field>
+    </record>
+      <!-- la view graph -->
+<!--       <record id="view_effet_graph" model="ir.ui.view">-->
+<!--         <field name="name">EFFET</field>-->
+<!--         <field name="model">>atm.effet</field>-->
+<!--         <field name="arch" type="xml">-->
+<!--             <graph string="EFFET" type="line" sample="1">-->
+<!--                 <field name="total_effet" type="measure"/>-->
+<!--             </graph>-->
+<!--         </field>-->
+<!--      </record>-->
+
+   <!--  ***********************************************************************************  Effet-->
+            <record model="ir.ui.view" id="view_form_effet">
+            <field name="name">EFFETS</field>
+            <field name="model">atm.effet</field>
+            <field name="arch" type="xml">
+                <form string="EFFETS">
+                      <sheet>
+                          <div class="title">
+                             <span class="badge text-bg-info shadow p-3 mb-3 rounded">EFFET</span>
+                          </div>
+
+                           <group>
+                                   <group>
+                                        <field name="libelle" string="Libellé de l'effet"/>
+                                   </group>
+                                   <group>
+                                       <field name="axe_id"/>
+                                   </group>
+                           </group>
+                      </sheet>
+                </form>
+            </field>
+        </record>
+              <!-- la view tree -->
+             <record model="ir.ui.view" id="view_tree_effet">
+                  <field name="name">EFFETS</field>
+                  <field name="model">atm.effet</field>
+                  <field name="arch" type="xml">
+                    <tree string="EFFETS"
+                    >
+                          <field name="libelle" string="Libellé"/>
+                          <field name="axe_id" string="Axe"/>
+                       <field name="create_date" string="Date de création" groups="Digistrat.group_admin_digistrat"/>
+                         <field name="write_date" string="Date de dernière modification " groups="Digistrat.group_admin_digistrat"/>
+                         <field name="create_uid" string="Créé par" groups="Digistrat.group_admin_digistrat"/>
+                         <field name="write_uid"  string="Modifié par" groups="Digistrat.group_admin_digistrat"/>
+
+
+        </tree>
+      </field>
+    </record>
+
+             <!-- la view action -->
+            <record model="ir.actions.act_window" id="view_action_effet">
+                  <field name="name">EFFETS</field>
+                  <field name="res_model">atm.effet</field>
+                  <field name="view_mode">tree,form</field>
+            </record>
+        <record model="ir.actions.act_window" id="view_action_effet_v3">
+                  <field name="name">EFFETS</field>
+                  <field name="res_model">atm.effet</field>
+                  <field name="view_mode">tree</field>
+            </record>
+
+             <record model="ir.actions.act_window" id="view_action_effet_v2">
+                  <field name="name">EFFETS</field>
+                  <field name="res_model">atm.effet</field>
+                  <field name="view_mode">pivot,graph</field>
+            </record>
+  </data>
+</odoo>

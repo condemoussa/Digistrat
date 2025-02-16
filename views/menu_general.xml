@@ -1,0 +1,420 @@
+<odoo>
+  <data>
+
+      <!-- menu general  -->
+      <menuitem name="DIGISTRAT"
+                id="id_menu_general_digistrat"
+                web_icon="Digistrat,static/description/logo.png"
+      />
+
+        <!-- *************************************************************** -->
+       <!-- tableau de bord -->
+        <menuitem
+                    name="Tableau de Bord" id="id_tableau_bord_sous_menu"
+                    parent="id_menu_general_digistrat"
+                    sequence="1"
+
+            />
+       <menuitem
+             name="Axe" id="id_axe_v1_sous_menu"
+             parent="id_tableau_bord_sous_menu"
+             sequence="1"
+             action="view_action_axes_v2"
+     />
+       <menuitem
+             name="Effet" id="id_effet_v1_sous_menu"
+             parent="id_tableau_bord_sous_menu"
+             sequence="2"
+             action="view_action_effet_v2"
+     />
+        <menuitem
+             name="Produit" id="id_produit_v1_sous_menu"
+             parent="id_tableau_bord_sous_menu"
+             sequence="3"
+             action="view_action_produit_v2"
+     />
+       <menuitem
+             name="Actions" id="id_action_v1_sous_menu"
+             parent="id_tableau_bord_sous_menu"
+             sequence="4"
+             action="view_action_action_v2"
+     />
+      <!-- menu plan strategique  -->
+            <menuitem
+                    name="Plan Strategique" id="id_premier_sous_menu"
+                    parent="id_menu_general_digistrat"
+                    sequence="2"
+            />
+
+            <menuitem name="Liste" id="id_premier_sous_sous_menu"
+                      parent="id_premier_sous_menu"
+                      action="view_action_plan_strategique"
+                      groups="Digistrat.group_admin_digistrat,Digistrat.group_agent_deesp"
+            />
+             <menuitem name="Liste" id="id_premier_sous_sous_menu_v3"
+                      parent="id_premier_sous_menu"
+                      action="view_action_plan_strategique_v3"
+                       groups="Digistrat.group_auditeur"
+            />
+
+          <!-- menu axes  -->
+
+             <menuitem
+                    name="Axes" id="id_deuxieme_sous_menu"
+                    parent="id_menu_general_digistrat"
+                    sequence="3"
+            />
+                     <!-- menu axes  -->
+             <menuitem name="Liste" id="id_deuxieme_sous_sous_axe"
+                parent="id_deuxieme_sous_menu"
+                action="view_action_axes"
+                        sequence="1"
+                       groups="Digistrat.group_agent_deesp,Digistrat.group_admin_digistrat"
+             />
+             <menuitem name="Liste" id="id_deuxieme_sous_sous_axe_v3"
+                parent="id_deuxieme_sous_menu"
+                action="view_action_axes_v3"
+                        sequence="1"
+                       groups="Digistrat.group_auditeur"
+             />
+                   <!-- menu impact  -->
+              <menuitem name="Impact" id="id_deuxieme_sous_sous_impact"
+                parent="id_deuxieme_sous_menu"
+                action="view_action_impact"
+                           sequence="2"
+                         groups="Digistrat.group_agent_deesp,Digistrat.group_admin_digistrat"
+             />
+              <menuitem name="Impact" id="id_deuxieme_sous_sous_impact_v3"
+                parent="id_deuxieme_sous_menu"
+                action="view_action_impact_v3"
+                           sequence="2"
+                        groups="Digistrat.group_auditeur"
+             />
+              <!-- menu resultat strategiue  -->
+             <menuitem name="Resultat Strategique" id="id_deuxieme_sous_sous_resultat_strategique"
+                parent="id_deuxieme_sous_menu"
+                action="view_action_resultat_strategique"
+                           sequence="3"
+                         groups="Digistrat.group_agent_deesp,Digistrat.group_admin_digistrat"
+             />
+              <menuitem name="Resultat Strategique" id="id_deuxieme_sous_sous_resultat_strategique_v3"
+                parent="id_deuxieme_sous_menu"
+                action="view_action_resultat_strategique_v3"
+                           sequence="3"
+                        groups="Digistrat.group_auditeur"
+             />
+
+         <!-- menu indicateur d impact  -->
+              <menuitem name="Indicateur d'Impact" id="id_indicate_sous_sous_impact"
+                parent="id_deuxieme_sous_menu"
+                action="view_action_indicateur_impact"
+                          sequence="4"
+                         groups="Digistrat.group_agent_deesp,Digistrat.group_admin_digistrat"
+             />
+            <menuitem name="Indicateur d'Impact" id="id_indicate_sous_sous_impact_v3"
+                    parent="id_deuxieme_sous_menu"
+                    action="view_action_indicateur_impact_v3"
+                              sequence="4"
+                      groups="Digistrat.group_auditeur"
+                 />
+
+      <!-- menu indicateur resultat strategique  -->
+              <menuitem name="Indicateur Resultat Strategique" id="id_indicate_sous_sous_resultat_strategique"
+                parent="id_deuxieme_sous_menu"
+                action="view_action_indicateur_resultat_strategique"
+                          sequence="5"
+                         groups="Digistrat.group_agent_deesp,Digistrat.group_admin_digistrat"
+             />
+               <menuitem name="Indicateur Resultat Strategique" id="id_indicate_sous_sous_resultat_strategique_v3"
+                parent="id_deuxieme_sous_menu"
+                action="view_action_indicateur_resultat_strategique_v3"
+                          sequence="5"
+                 groups="Digistrat.group_auditeur"
+             />
+
+         <!-- menu saisir indicateur d'impact  -->
+            <menuitem name="Données d'Indicateur d'Impact " id="id_indicate_sous_saisir_indicateur_strategique"
+                parent="id_deuxieme_sous_menu"
+                action="view_action_saisie_indicateur_impact"
+                        sequence="6"
+                       groups="Digistrat.group_agent_deesp,Digistrat.group_admin_digistrat"
+             />
+            <menuitem name="Données d'Indicateur d'Impact " id="id_indicate_sous_saisir_indicateur_strategique_v3"
+                parent="id_deuxieme_sous_menu"
+                action="view_action_saisie_indicateur_impact_v3"
+                        sequence="6"
+                        groups="Digistrat.group_auditeur"
+             />
+
+            <!-- menu saisir  indicateur resultat strategique  -->
+            <menuitem name="Données d'Indicateur de resultat Strategique" id="id_indicateur_sous_saisir_indicateur_resultat_strategique"
+                parent="id_deuxieme_sous_menu"
+                action="view_action_saisie_indicateur_resultat_strategique"
+                        sequence="7"
+                        groups="Digistrat.group_agent_deesp,Digistrat.group_admin_digistrat"
+             />
+             <menuitem name="Données d'Indicateur de resultat Strategique" id="id_indicateur_sous_saisir_indicateur_resultat_strategique_v3"
+                parent="id_deuxieme_sous_menu"
+                action="view_action_saisie_indicateur_resultat_strategique_v3"
+                        sequence="7"
+                       groups="Digistrat.group_auditeur"
+             />
+
+
+
+      <!-- menu effets  -->
+        <menuitem
+                    name="Effets" id="id_troisieme_sous_menu"
+                    parent="id_menu_general_digistrat"
+                    sequence="4"
+            />
+       <!-- effets  -->
+       <menuitem name="Liste" id="id_troisieme_sous_sous_effet"
+                parent="id_troisieme_sous_menu"
+                action="view_action_effet"
+                 groups="Digistrat.group_agent_deesp,Digistrat.group_admin_digistrat"
+             />
+       <menuitem name="Liste" id="id_troisieme_sous_sous_effet_v3"
+                parent="id_troisieme_sous_menu"
+                action="view_action_effet_v3"
+                 groups="Digistrat.group_auditeur"
+             />
+
+
+       <!-- indicateur effets  -->
+       <menuitem name="Indicateur Effets" id="id_troisieme_sous_sous_indicateur_effet"
+                parent="id_troisieme_sous_menu"
+                action="view_action_indicateur_effet"
+                  groups="Digistrat.group_agent_deesp,Digistrat.group_admin_digistrat"
+             />
+       <menuitem name="Indicateur Effets" id="id_troisieme_sous_sous_indicateur_effet_v3"
+                parent="id_troisieme_sous_menu"
+                action="view_action_indicateur_effet_v3"
+                 groups="Digistrat.group_auditeur"
+             />
+       <menuitem name="Indicateur Effets" id="id_troisieme_sous_sous_indicateur_effet_v4"
+                parent="id_troisieme_sous_menu"
+                action="view_action_indicateur_effet_v4"
+                 groups="Digistrat.group_contributeur"
+             />
+
+
+       <!-- saisir indicateur effet  -->
+       <menuitem name="Saisir Indicateur Effets " id="id_troisieme_sous_sous_saisir_indicateur_effet"
+                parent="id_troisieme_sous_menu"
+                action="view_action_saisie_indicateur_effet"
+                   groups="Digistrat.group_agent_deesp,Digistrat.group_admin_digistrat,Digistrat.group_contributeur"
+
+             />
+       <menuitem name="Saisir Indicateur Effets " id="id_troisieme_sous_sous_saisir_indicateur_effet_v3"
+                parent="id_troisieme_sous_menu"
+                action="view_action_saisie_indicateur_effet_v3"
+                 groups="Digistrat.group_auditeur"
+             />
+
+
+      <!-- risque indicateur effet  -->
+       <menuitem name="Risque Indicateur Effets" id="id_troisieme_sous_sous_risque_indicateur_effet"
+                parent="id_troisieme_sous_menu"
+                action="view_action_risque_indicateur_effet"
+                   groups="Digistrat.group_agent_deesp,Digistrat.group_admin_digistrat,Digistrat.group_contributeur"
+
+             />
+       <menuitem name="Risque Indicateur Effets" id="id_troisieme_sous_sous_risque_indicateur_effet_v3"
+                parent="id_troisieme_sous_menu"
+                action="view_action_risque_indicateur_effet_v3"
+                 groups="Digistrat.group_auditeur"
+             />
+
+
+      <!-- hypothese indicateur effet  -->
+      <menuitem name="Hypothese Indicateur Effets" id="id_troisieme_sous_sous_hypothese_indicateur_effet"
+                parent="id_troisieme_sous_menu"
+                action="view_action_hopothse_indicateur_effet"
+                   groups="Digistrat.group_agent_deesp,Digistrat.group_admin_digistrat,Digistrat.group_contributeur"
+             />
+      <menuitem name="Hypothese Indicateur Effets" id="id_troisieme_sous_sous_hypothese_indicateur_effet_v3"
+                parent="id_troisieme_sous_menu"
+                action="view_action_hopothse_indicateur_effet_v3"
+                groups="Digistrat.group_auditeur"
+             />
+
+
+          <!-- menu produit  -->
+
+             <menuitem
+                    name="Produits" id="id_quatrieme_sous_menu"
+                    parent="id_menu_general_digistrat"
+                    sequence="5"
+            />
+            <!--  produit  -->
+             <menuitem name="Liste" id="id_deuxieme_sous_sous_produit"
+                parent="id_quatrieme_sous_menu"
+                action="view_action_produit"
+                         groups="Digistrat.group_agent_deesp,Digistrat.group_admin_digistrat"
+             />
+               <menuitem name="Liste" id="id_deuxieme_sous_sous_produit_v3"
+                parent="id_quatrieme_sous_menu"
+                action="view_action_produit_v3"
+                         groups="Digistrat.group_auditeur"
+             />
+              <!-- indicateur produit  -->
+
+             <menuitem name="Indicateur Produit " id="id_sous_sous_indicateur_produit"
+                parent="id_quatrieme_sous_menu"
+                action="view_action_indicateur_produit"
+                       groups="Digistrat.group_agent_deesp,Digistrat.group_admin_digistrat"
+
+             />
+               <menuitem name="Indicateur Produit " id="id_sous_sous_indicateur_produit_v3"
+                parent="id_quatrieme_sous_menu"
+                action="view_action_indicateur_produit_v3"
+                         groups="Digistrat.group_auditeur"
+             />
+               <menuitem name="Indicateur Produit " id="id_sous_sous_indicateur_produit_v4"
+                parent="id_quatrieme_sous_menu"
+                action="view_action_indicateur_produit_v4"
+                         groups="Digistrat.group_contributeur"
+             />
+               <menuitem
+                    id="id_sous_saisir_synthese_produit"
+                    name="Saisir de synthèse d'un indicateur de produit"
+                    parent="id_quatrieme_sous_menu"
+                    action="view_action_saisie_synthese_indicateur_produit"
+                    sequence="20"
+                    groups="Digistrat.group_agent_deesp"
+                />
+                 <menuitem
+                    id="id_sous_saisir_synthese_produit_v3"
+                    name="Saisir de synthèse d'un indicateur de produit"
+                    parent="id_quatrieme_sous_menu"
+                    action="view_action_saisie_synthese_indicateur_produit_v3"
+                    sequence="20"
+                    groups="Digistrat.group_auditeur"
+                />
+             <!-- saisir indicateur produit  -->
+
+              <menuitem name=" Saisir Indicateur Produit" id="id_sous_sous_saisir_indicateur_produit"
+                parent="id_quatrieme_sous_menu"
+                action="view_action_saisie_indicateur_produit"
+                       groups="Digistrat.group_agent_deesp,Digistrat.group_admin_digistrat,Digistrat.group_contributeur"
+              />
+         <menuitem name=" Saisir Indicateur Produit" id="id_sous_sous_saisir_indicateur_produit_v3"
+                parent="id_quatrieme_sous_menu"
+                action="view_action_saisie_indicateur_produit_v3"
+                   groups="Digistrat.group_auditeur"
+              />
+
+<!-- risque indicateur produit  -->
+               <menuitem name=" Risque Indicateur Produit" id="id_sous_sous_risque_indicateur_produit"
+                parent="id_quatrieme_sous_menu"
+                action="view_action_risque_indicateur_produit"
+                         groups="Digistrat.group_agent_deesp,Digistrat.group_admin_digistrat,Digistrat.group_contributeur"
+              />
+        <menuitem name=" Risque Indicateur Produit" id="id_sous_sous_risque_indicateur_produit_v3"
+                parent="id_quatrieme_sous_menu"
+                action="view_action_risque_indicateur_produit_v3"
+                  groups="Digistrat.group_auditeur"
+              />
+
+
+      <!-- hypothese indicateur produit  -->
+              <menuitem name=" Hypothese Indicateur Produit " id="id_sous_sous_hypothese_indicateur_produit"
+                parent="id_quatrieme_sous_menu"
+                action="view_action_hypothese_indicateur_produit"
+                        groups="Digistrat.group_agent_deesp,Digistrat.group_admin_digistrat,Digistrat.group_contributeur"
+              />
+         <menuitem name=" Hypothese Indicateur Produit " id="id_sous_sous_hypothese_indicateur_produit_v3"
+                parent="id_quatrieme_sous_menu"
+                action="view_action_hypothese_indicateur_produit_v3"
+                   groups="Digistrat.group_auditeur"
+              />
+
+
+
+              <!-- menu action  -->
+
+             <menuitem
+                    name="Actions" id="id_cinquieme_sous_menu"
+                    parent="id_menu_general_digistrat"
+                    sequence="6"
+            />
+             <menuitem name="Liste" id="id_cinquieme_sous_sous_action"
+                parent="id_cinquieme_sous_menu"
+                action="view_action_action"
+                        groups="Digistrat.group_agent_deesp,Digistrat.group_admin_digistrat"
+             />
+<!--                acces aditeur en lecture-->
+              <menuitem name="Liste" id="id_cinquieme_sous_sous_action_v3"
+                parent="id_cinquieme_sous_menu"
+                action="view_action_action_v3" groups="Digistrat.group_auditeur"
+             />
+              <menuitem name="Liste" id="id_cinquieme_sous_sous_action_v4"
+                parent="id_cinquieme_sous_menu"
+                action="view_action_action_v4" groups="Digistrat.group_contributeur"
+             />
+
+             <menuitem name="Saisir Action" id="id_cinquieme_sous_sous_saisir_action"
+                parent="id_cinquieme_sous_menu"
+                action="view_action_saisie_action"
+                       groups="Digistrat.group_agent_deesp,Digistrat.group_admin_digistrat,Digistrat.group_contributeur"
+             />
+             <menuitem name="Saisir Action" id="id_cinquieme_sous_sous_saisir_action_v3"
+                parent="id_cinquieme_sous_menu"
+                action="view_action_saisie_action_v3" groups="Digistrat.group_auditeur"
+             />
+                 <menuitem
+                    id="id_sous_saisir_synthese_action"
+                    name="Saisir de synthèse d'un indicateur d'action"
+                    parent="id_cinquieme_sous_menu"
+                    action="view_action_saisie_synthese_action"
+                    sequence="10"
+                    groups="Digistrat.group_agent_deesp"
+                />
+                 <menuitem
+                    id="id_sous_saisir_synthese_action_v3"
+                    name="Saisir de synthèse d'un indicateur d'action"
+                    parent="id_cinquieme_sous_menu"
+                    action="view_action_saisie_synthese_action_v3"
+                    sequence="10"
+                     groups="Digistrat.group_auditeur"
+                />
+
+        <!-- menu parametre-->
+
+             <menuitem
+                    name="Parametres" id="id_sixieme_sous_menu"
+                    parent="id_menu_general_digistrat"
+                    sequence="7"
+                     groups="Digistrat.group_agent_deesp,Digistrat.group_admin_digistrat"
+            />
+             <menuitem name="Gestion PDF" id="id_sixieme_sous_sous_pdf"
+                parent="id_sixieme_sous_menu"
+                action="view_action_atm_pdf"
+                         sequence="2"
+             />
+
+             <menuitem name="Profil" id="id_sixieme_sous_sous_profil"
+                parent="id_sixieme_sous_menu"
+                action="base.action_res_groups"
+                         sequence="3"
+             />
+              <menuitem name="Direction" id="id_septieme_sous_sous_direction"
+                parent="id_sixieme_sous_menu"
+                action="view_action_direction"
+                          sequence="4"
+             />
+             <menuitem name="Partenaire" id="id_septieme_sous_sous_partenaire"
+                parent="id_sixieme_sous_menu"
+                action="view_action_partenaire"
+                          sequence="5"
+             />
+             <menuitem name="Utilisateur" id="id_premier_user_sous_menu_user"
+                      parent="id_sixieme_sous_menu"
+                      action="base.action_res_users"
+
+            />
+
+
+       </data>
+    </odoo>

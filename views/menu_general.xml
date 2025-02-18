@@ -12,33 +12,34 @@
         <menuitem
                     name="Tableau de Bord" id="id_tableau_bord_sous_menu"
                     parent="id_menu_general_digistrat"
+                    action="action_tableau_de_bord_digistrat"
                     sequence="1"
 
             />
-       <menuitem
-             name="Axe" id="id_axe_v1_sous_menu"
-             parent="id_tableau_bord_sous_menu"
-             sequence="1"
-             action="view_action_axes_v2"
-     />
-       <menuitem
-             name="Effet" id="id_effet_v1_sous_menu"
-             parent="id_tableau_bord_sous_menu"
-             sequence="2"
-             action="view_action_effet_v2"
-     />
-        <menuitem
-             name="Produit" id="id_produit_v1_sous_menu"
-             parent="id_tableau_bord_sous_menu"
-             sequence="3"
-             action="view_action_produit_v2"
-     />
-       <menuitem
-             name="Actions" id="id_action_v1_sous_menu"
-             parent="id_tableau_bord_sous_menu"
-             sequence="4"
-             action="view_action_action_v2"
-     />
+<!--       <menuitem-->
+<!--             name="Axe" id="id_axe_v1_sous_menu"-->
+<!--             parent="id_tableau_bord_sous_menu"-->
+<!--             sequence="1"-->
+<!--             action="view_action_axes_v2"-->
+<!--     />-->
+<!--       <menuitem-->
+<!--             name="Effet" id="id_effet_v1_sous_menu"-->
+<!--             parent="id_tableau_bord_sous_menu"-->
+<!--             sequence="2"-->
+<!--             action="view_action_effet_v2"-->
+<!--     />-->
+<!--        <menuitem-->
+<!--             name="Produit" id="id_produit_v1_sous_menu"-->
+<!--             parent="id_tableau_bord_sous_menu"-->
+<!--             sequence="3"-->
+<!--             action="view_action_produit_v2"-->
+<!--     />-->
+<!--       <menuitem-->
+<!--             name="Actions" id="id_action_v1_sous_menu"-->
+<!--             parent="id_tableau_bord_sous_menu"-->
+<!--             sequence="4"-->
+<!--             action="view_action_action_v2"-->
+<!--     />-->
       <!-- menu plan strategique  -->
             <menuitem
                     name="Plan Strategique" id="id_premier_sous_menu"

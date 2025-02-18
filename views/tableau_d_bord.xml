@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Définition de l'action client -->
+    <record id="action_tableau_de_bord_digistrat" model="ir.actions.client">
+        <field name="name">Tableau de Bord Digistrat</field>
+        <field name="tag">tableau_de_bord_digistrat</field>
+        <field name="params" eval="{'context': {}}"/>
+    </record>
+
+
+</odoo>

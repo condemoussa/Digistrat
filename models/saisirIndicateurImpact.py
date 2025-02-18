@@ -29,7 +29,6 @@ class SaisirIndicateurImpact(models.Model):
 
     def write(self, vals):
         user_admin = self.env["res.users"].search([("profil", "=", "admin_digistrat")])
-        test=vals["realise"]
         res = super(SaisirIndicateurImpact, self).write(vals)
         if res:
             for line in user_admin:
@@ -45,6 +44,16 @@ class SaisirIndicateurImpact(models.Model):
                 }).send()
 
         return res
+
+    def get_status_counts(self):
+        # Compter les enregistrements avec le statut 'atteint'
+        atteint_count = self.search_count([('status', '=', 'atteint')])
+        # Compter les enregistrements avec le statut 'non atteint'
+        non_atteint_count = self.search_count([('status', '=', 'no_atteint')])
+        return {
+            'atteint': atteint_count,
+            'non_atteint': non_atteint_count,
+        }
 
 
     annee= fields.Char('Année :' ,size=4)

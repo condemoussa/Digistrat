@@ -13,6 +13,7 @@ This adds uselfull methods for payslips structures
     'data': [
            "security/ir.model.access.csv",
            "security/security_digistra.xml",
+           "views/tableau_d_bord.xml",
            'views/plan_strategique.xml',
            'views/atm_axe.xml',
            'views/indicateur_impact.xml',
@@ -48,7 +49,8 @@ This adds uselfull methods for payslips structures
     'assets': {
         'web.assets_backend': [
             "/Digistrat/static/src/css/custom.css",
-
+            'Digistrat/static/src/xml/**/*',
+            'Digistrat/static/src/components/**/*',
         ]
     },
     'installable': True,

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="Tableau_de_bord_digistrat" owl="1">
+        <div class="o_tableau_de_bord_digistrat container mt-4">
+            <h1 class="text-center mb-4">Tableau de Bord Digistrat</h1>
+            <div class="row">
+                <!-- Carte pour le total des axes -->
+                <div class="col-md-3 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Total des Axes</h5>
+                            <p class="card-text display-4"><t t-esc="state.totalAxe"/></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carte pour le total des effets -->
+                <div class="col-md-3 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Total des Effets</h5>
+                            <p class="card-text display-4"><t t-esc="state.totalEffet"/></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carte pour le total des produit -->
+                <div class="col-md-3 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Total des Produits</h5>
+                            <p class="card-text display-4"><t t-esc="state.totalProduit"/></p>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Carte pour le total des actions -->
+                <div class="col-md-3 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Total des Actions</h5>
+                            <p class="card-text display-4"><t t-esc="state.totalAction"/></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         <div class="container mt-4">
+            <div class="row">
+                <!-- Carte pour le total des axes -->
+                <div class="col-md-6 mb-4" style="height:400px;">
+                    <div class="status-band mb-4">
+                              <h4>Statut des Indicateurs</h4>
+                            <div class="progress">
+                                <div class="progress-bar bg-success" role="progressbar"
+                                     t-att-style="'width: ' + (state.totalAtteint / (state.totalAtteint + state.totalNonAtteint) * 100) + '%;'"
+                                     t-att-aria-valuenow="state.totalAtteint"
+                                     t-att-aria-valuemin="0"
+                                     t-att-aria-valuemax="state.totalAtteint + state.totalNonAtteint">
+                                    Atteint: <t t-esc="state.totalAtteint"/>
+                                </div>
+                                <div class="progress-bar bg-danger" role="progressbar"
+                                     t-att-style="'width: ' + (state.totalNonAtteint / (state.totalAtteint + state.totalNonAtteint) * 100) + '%;'"
+                                     t-att-aria-valuenow="state.totalNonAtteint"
+                                     t-att-aria-valuemin="0"
+                                     t-att-aria-valuemax="state.totalAtteint + state.totalNonAtteint">
+                                    Non Atteint: <t t-esc="state.totalNonAtteint"/>
+                                </div>
+                            </div>
+                        </div>
+                 </div>
+
+                <!-- Carte pour le total des effets -->
+                <div class="col-md-6 mb-4" style="height:400px;">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Total des Effets</h5>
+                            <p class="card-text display-4"><t t-esc="state.totalEffet"/></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </t>
+</templates>
